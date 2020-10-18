@@ -34,7 +34,7 @@
                               .9-.3 1.1-.7.3-.5.2-1-.2-1.3zm-2.5-8h-4.3l5 4.5V3.6c0-.3-.3-.6-.7-.6z"/>
                         </svg>
                     </router-link>
-                    <router-link to="/" class="px-6 border-b-2 border-white h-full flex items-center">
+                    <router-link :to="'/users/'+ authUser.data.user_id" class="px-6 border-b-2 border-white h-full flex items-center">
                         <img src="../../../ui/photo-1518806118471-f28b20a1d79d.jpg" alt="profile image for user"
                              class="w-8 h-8 object-cover rounded-full">
 
@@ -58,8 +58,15 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
     export default {
-        name: "Nav"
+        name: "Nav",
+
+        computed:{
+            ...mapGetters({
+                    authUser:'authUser'
+            })
+        }
     }
 </script>
 

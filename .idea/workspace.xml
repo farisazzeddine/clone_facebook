@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9ad2151-0abb-4900-9156-a8694f833196" name="Default" comment="" />
+    <list default="true" id="c9ad2151-0abb-4900-9156-a8694f833196" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Nav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -50,7 +66,7 @@
     </commandsHistory>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ui/facebook-ct/facebook-ct" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -196,6 +212,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lucidaraveladmin" />
@@ -261,6 +278,9 @@
       <workItem from="1588777230202" duration="9752000" />
       <workItem from="1588792044837" duration="16530000" />
       <workItem from="1589120228644" duration="35309000" />
+      <workItem from="1602849895426" duration="9616000" />
+      <workItem from="1602933058468" duration="10648000" />
+      <workItem from="1603024219378" duration="8931000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -269,53 +289,28 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="345" y="0" width="690" height="738" key="#RetrievePostsTest.a_user_can_only_retrieve_their_posts" timestamp="1588964473641">
+    <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile" timestamp="1602977175945">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="345" y="0" width="690" height="738" key="#RetrievePostsTest.a_user_can_only_retrieve_their_posts/0.0.1366.738@0.0.1366.738" timestamp="1588964473641" />
-    <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile" timestamp="1589391299427">
+    <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile/0.0.1366.738@0.0.1366.738" timestamp="1602977175945" />
+    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603062939770">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile/0.0.1366.738@0.0.1366.738" timestamp="1589391299427" />
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589389007939">
+    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1603062939770" />
+    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603040195187">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1589389007939" />
-    <state x="481" y="167" key="NewPhpClassDialog" timestamp="1588964204660">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="481" y="167" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1588964204660" />
-    <state x="257" y="23" key="SettingsEditor" timestamp="1588779425386">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="257" y="23" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1588779425386" />
-    <state x="301" y="77" key="SettingsEditor/0.0.1600.870@0.0.1600.870" timestamp="1588211363687" />
-    <state width="257" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1588214074821">
-      <screen x="0" y="0" width="1600" height="870" />
-    </state>
-    <state width="257" height="198" key="ShowFilterAction_Filter_Popup/0.0.1600.870@0.0.1600.870" timestamp="1588214074821" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1589123497088">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1589123497088" />
-    <state x="399" y="220" key="com.intellij.ide.util.TipDialog" timestamp="1589120229740">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="399" y="220" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1589120229740" />
-    <state x="467" y="259" key="com.intellij.ide.util.TipDialog/0.0.1600.870@0.0.1600.870" timestamp="1588187059608" />
-    <state x="390" y="19" width="627" height="700" key="find.popup" timestamp="1588871672261">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="390" y="19" width="627" height="700" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1588871672261" />
-    <state x="457" y="22" width="686" height="825" key="find.popup/0.0.1600.870@0.0.1600.870" timestamp="1588214552538" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1589042953089">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1589042953089" />
-    <state x="395" y="154" width="672" height="576" key="search.everywhere.popup" timestamp="1589410909972">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="395" y="154" width="672" height="576" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1589410909972" />
-    <state x="463" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1600.870@0.0.1600.870" timestamp="1588214268467" />
+    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1603040195187" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/views/NewsFeed.vue</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
