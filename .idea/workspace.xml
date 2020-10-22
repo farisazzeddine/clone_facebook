@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9ad2151-0abb-4900-9156-a8694f833196" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c9ad2151-0abb-4900-9156-a8694f833196" name="Default" comment="test unitaire">
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Nav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Users/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Users/Show.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/RetrievePostsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RetrievePostsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +275,10 @@
       <workItem from="1589120228644" duration="35309000" />
       <workItem from="1602849895426" duration="9616000" />
       <workItem from="1602933058468" duration="10648000" />
-      <workItem from="1603024219378" duration="8931000" />
+      <workItem from="1603024219378" duration="9449000" />
+      <workItem from="1603107481961" duration="15252000" />
+      <workItem from="1603282964355" duration="12459000" />
+      <workItem from="1603378803386" duration="8786000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -288,19 +286,27 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test unitaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="test unitaire" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile" timestamp="1602977175945">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="345" y="0" width="690" height="738" key="#UserCanViewProfileTest.a_user_can_fetch_posts_for_a_profile/0.0.1366.738@0.0.1366.738" timestamp="1602977175945" />
+    <state x="336" y="0" key="CommitChangelistDialog2" timestamp="1603063228765">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="336" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1603063228765" />
     <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603062939770">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1603062939770" />
-    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603040195187">
+    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603386285855">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1603040195187" />
+    <state x="350" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1603386285855" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1934,6 +1934,13 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav */ "./resources/js/components/Nav.vue");
 /* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./resources/js/components/Sidebar.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1947,6 +1954,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1961,6 +1969,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.$store.dispatch('setPageTitle', this.$route.meta.title);
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])({
+    authUser: 'authUser'
+  })),
   watch: {
     $route: function $route(to, from) {
       this.$store.dispatch('setPageTitle', to.meta.title);
@@ -2240,6 +2251,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Post */ "./resources/js/components/Post.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2262,38 +2280,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Show",
   components: {
     Post: _components_Post__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  data: function data() {
-    return {
-      user: null,
-      posts: null,
-      userloading: true,
-      postloading: true
-    };
-  },
   mounted: function mounted() {
-    var _this = this;
-
-    axios.get('/api/users/' + this.$route.params.userId).then(function (res) {
-      _this.user = res.data;
-    })["catch"](function (error) {
-      console.log('Unable to fetch the user from the server.');
-    })["finally"](function () {
-      _this.userloading = false;
-    });
-    axios.get('/api/users/' + this.$route.params.userId + '/posts').then(function (res) {
-      _this.posts = res.data;
-    })["catch"](function (error) {
-      console.log('Unable to fetch posts');
-    })["finally"](function () {
-      _this.postloading = false;
-    });
-  }
+    this.$store.dispatch('fetchUser', this.$route.params.userId);
+    this.$store.dispatch('fetchUserPosts', this.$route.params.userId);
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    user: 'user',
+    posts: 'posts',
+    status: 'status',
+    friendButtonText: 'friendButtonText'
+  }))
 });
 
 /***/ }),
@@ -37668,30 +37685,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "flex flex-col flex-1 h-screen overflow-y-hidden" },
-    [
-      _c("Nav"),
-      _vm._v(" "),
-      _c(
+  return _vm.authUser
+    ? _c(
         "div",
-        { staticClass: "flex overflow-x-hidden flex-1" },
+        { staticClass: "flex flex-col flex-1 h-screen overflow-y-hidden" },
         [
-          _c("Sidebar"),
+          _c("Nav"),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "overflow-x-hidden w-2/3" },
-            [_c("router-view")],
+            { staticClass: "flex overflow-x-hidden flex-1" },
+            [
+              _c("Sidebar"),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "overflow-x-hidden w-2/3" },
+                [_c("router-view", { key: _vm.$route.fullPath })],
+                1
+              )
+            ],
             1
           )
         ],
         1
       )
-    ],
-    1
-  )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38252,41 +38271,121 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "flex flex-col items-center" },
-    [
-      _c("div", { staticClass: "relative mb-8" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "absolute flex items-center bottom-0 left-0 -mb-8 ml-12  z-20"
-          },
-          [
-            _vm._m(1),
+  return _vm.status.user === "success" && _vm.user
+    ? _c(
+        "div",
+        { staticClass: "flex flex-col items-center" },
+        [
+          _c("div", { staticClass: "relative mb-8" }, [
+            _vm._m(0),
             _vm._v(" "),
-            _c("p", { staticClass: "ml-4 text-2xl text-gray-100" }, [
-              _vm._v(_vm._s(_vm.user.data.attributes.name))
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.postloading
-        ? _c("p", [_vm._v(" Loading Posts...")])
-        : _vm._l(_vm.posts.data, function(post) {
-            return _c("Post", { key: post.data.post_id, attrs: { post: post } })
-          }),
-      _vm._v(" "),
-      !_vm.postloading && _vm.posts.data.length < 1
-        ? _c("p", [_vm._v("No Posts found. Get started... ")])
-        : _vm._e()
-    ],
-    2
-  )
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute flex items-center bottom-0 left-0 -mb-8 ml-12  z-20"
+              },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("p", { staticClass: "ml-4 text-2xl text-gray-100" }, [
+                  _vm._v(_vm._s(_vm.user.data.attributes.name))
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute flex items-center bottom-0 right-0 mb-4 mr-12  z-20"
+              },
+              [
+                _vm.friendButtonText && _vm.friendButtonText !== "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "py-1 px-3 bg-gray-400 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "sendFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.friendButtonText) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.friendButtonText && _vm.friendButtonText === "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "mr-2 py-1 px-3 bg-gray-500 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "acceptFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Accept\n                        "
+                        )
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.friendButtonText && _vm.friendButtonText === "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "  py-1 px-3 bg-gray-400 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "ignoreFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Ignore\n                        "
+                        )
+                      ]
+                    )
+                  : _vm._e()
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.status.posts === "loading"
+            ? _c("div", [_vm._v(" Loading Posts...")])
+            : _vm.posts.length < 1
+            ? _c("div", [_vm._v("No Posts found. Get started... ")])
+            : _vm._l(_vm.posts.data, function(post) {
+                return _c("Post", {
+                  key: post.data.post_id,
+                  attrs: { post: post }
+                })
+              })
+        ],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -55150,6 +55249,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/user */ "./resources/js/store/modules/user.js");
 /* harmony import */ var _modules_title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/title */ "./resources/js/store/modules/title.js");
+/* harmony import */ var _modules_profile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/profile */ "./resources/js/store/modules/profile.js");
+
 
 
 
@@ -55158,9 +55259,145 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: {
     User: _modules_user__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Title: _modules_title__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Title: _modules_title__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Profile: _modules_profile__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 }));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/profile.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/profile.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var state = {
+  user: null,
+  userStatus: null,
+  posts: null,
+  postsStatus: null
+};
+var getters = {
+  user: function user(state) {
+    return state.user;
+  },
+  posts: function posts(state) {
+    return state.posts;
+  },
+  status: function status(state) {
+    return {
+      user: state.userStatus,
+      posts: state.postsStatus
+    };
+  },
+  friendship: function friendship(state) {
+    return state.user.data.attributes.friendship;
+  },
+  friendButtonText: function friendButtonText(state, getters, rootState) {
+    if (rootState.User.user.data.user_id === state.user.data.user_id) {
+      return '';
+    } else if (getters.friendship === null) {
+      return 'Add Friend';
+    } else if (getters.friendship.data.attributes.confirmed_at === null && getters.friendship.data.attributes.friend_id !== rootState.User.user.data.user_id) {
+      return 'Pending Friend Request';
+    } else if (getters.friendship.data.attributes.confirmed_at !== null) {
+      return '';
+    }
+
+    return 'Accept';
+  }
+};
+var actions = {
+  fetchUser: function fetchUser(_ref, userId) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    commit('setUserStatus', 'loading');
+    axios.get('/api/users/' + userId).then(function (res) {
+      commit('setUser', res.data);
+      commit('setUserStatus', 'success');
+    })["catch"](function (error) {
+      commit('setUserStatus', 'error');
+    });
+  },
+  fetchUserPosts: function fetchUserPosts(_ref2, userId) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    commit('setPostsStatus', 'loading');
+    axios.get('/api/users/' + userId + '/posts').then(function (res) {
+      commit('setPosts', res.data);
+      commit('setPostsStatus', 'success');
+    })["catch"](function (error) {
+      commit('setPostsStatus', 'error');
+    });
+  },
+  sendFriendRequest: function sendFriendRequest(_ref3, friendId) {
+    var commit = _ref3.commit,
+        getters = _ref3.getters;
+
+    if (getters.friendButtonText !== 'Add Friend') {
+      return;
+    }
+
+    commit('setButtonText', 'Loading');
+    axios.post('/api/friend-request', {
+      'friend_id': friendId
+    }).then(function (res) {
+      commit('setUserFriendship', res.data);
+    })["catch"](function (error) {
+      commit('setUserFriendship', 'Add Friend');
+    });
+  },
+  acceptFriendRequest: function acceptFriendRequest(_ref4, userId) {
+    var commit = _ref4.commit,
+        state = _ref4.state;
+    commit('setButtonText', 'Loading');
+    axios.post('/api/friend-request-response', {
+      'user_id': userId,
+      'status': 1
+    }).then(function (res) {
+      commit('setUserFriendship', res.data);
+    })["catch"](function (error) {});
+  },
+  ignoreFriendRequest: function ignoreFriendRequest(_ref5, userId) {
+    var commit = _ref5.commit,
+        state = _ref5.state;
+    commit('setButtonText', 'Loading');
+    axios["delete"]('/api/friend-request-response/delete', {
+      data: {
+        'user_id': userId
+      }
+    }).then(function (res) {
+      commit('setUserFriendship', null);
+    })["catch"](function (error) {});
+  }
+};
+var mutations = {
+  setUser: function setUser(state, user) {
+    state.user = user;
+  },
+  setPosts: function setPosts(state, posts) {
+    state.posts = posts;
+  },
+  setUserFriendship: function setUserFriendship(state, friendship) {
+    state.user.data.attributes.friendship = friendship;
+  },
+  setUserStatus: function setUserStatus(state, status) {
+    state.userStatus = status;
+  },
+  setPostsStatus: function setPostsStatus(state, status) {
+    state.postsStatus = status;
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
 
 /***/ }),
 
