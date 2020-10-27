@@ -2,8 +2,7 @@
     <div class="flex flex-col items-center" v-if="status.user === 'success' && user ">
         <div class="relative mb-8">
                     <div class="w-100 h-64 overflow-hidden z-10">
-                        <img src="../../../../ui/photo5922572005410976711.jpg" alt="user background image"
-                             class="object-cover w-full">
+                        <UploadableImage />
                     </div>
                     <div class="absolute flex items-center bottom-0 left-0 -mb-8 ml-12  z-20">
                         <div class="w-32">
@@ -30,18 +29,20 @@
         </div>
             <div v-if="status.posts ==='loading'"> Loading Posts...</div>
             <div v-else-if=" posts.length <1 ">No Posts found. Get started... </div>
-            <Post v-else v-for="post in posts.data" :key="post.data.post_id" :post="post" />
+            <Post v-else v-for="(post, postKey) in posts.data" :key="postKey" :post="post" />
     </div>
 </template>
 
 <script>
     import Post from '../../components/Post';
+    import UploadableImage from "../../components/UploadableImage";
     import {mapGetters} from 'vuex';
     export default {
         name: "Show",
 
         components:{
             Post,
+            UploadableImage,
         },
 
 
